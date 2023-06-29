@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>KT 3</title>
+</head>
+<body>
+    <script>
+        function func1() {
+            alert("Мне нравится " + document.aform.shape.value + " с цветом " + document.aform.color.value);
+            alert("Длина фигуры " + document.form1.shape.value.length);
+        }
+        function fun2() {
+            alert("Внимательно вводите свое имя");
+        }
+        function func3() {
+            alert("Вы выбрали " + document.aform2.choice.value);
+        }
+        function func4() {
+            alert("Спасибо за участие в опросе, " + document.aform2.username.value);
+        }
+    </script>
+    <form name="aform">
+        <h1>Задание 1</h1>
+        <label>Введите геометрическую фигуру<input type="text" name="shape" autocomplete="off" /></label>
+        <label>Введите цвет<input type="text" name="color" autocomplete="off" /></label>
+        <input type="submit" onclick="func1()" />
+    </form>
+    <br />
+    <form name="aform2">
+        <h1>Задание 2</h1>
+        <label>Введите имя<input type="text" name="username" onclick="func2()" autocomplete="off" /></label>
+        <fieldset onchange="func3()">
+            <p>Выберите что вам больше нравится</p>
+            <label>Мороженное<input type="radio" name="choice" value="мороженное" /></label>
+            <label>Шоколад<input type="radio" name="choice" value="шоколад" /></label>
+        </fieldset>
+        <input type="submit" onclick="func4()" />
+    </form>
+</body>
+</html>
