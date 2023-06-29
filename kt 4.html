@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>KT4</title>
+    <script>
+        let books = ['Лермонтов', 'Достоевский'];
+        books.shift();
+        books.unshift('Тютчев', 'Пушкин');
+        books.push('Толстой');
+        console.log("Часть 3, задание 1: " + books);
+
+        let arr = [];
+        for (let i = 0; i < 7; i++) {
+            arr.push(Math.floor(Math.random() * 10) + 1);
+        }
+        console.log("Часть 3, задание 2: " + arr);
+        multiplication = 1
+        for (i = 0; i < arr.length; i++) {
+            multiplication += arr[i];
+        }
+
+        console.log("Удвоенная сумма элементов " + (2 * multiplication));
+
+        function card(card_num) {
+            let firstNumber = Math.floor(card_num / 100);
+            let secondNumber = card_num % 100;
+            let suit, value;
+
+            if (firstNumber == 1) {
+                suit = "пики";
+            }
+            else if (firstNumber == 2) {
+                suit = "трефы";
+            }
+            else if (firstNumber == 3) {
+                suit = "бубны";
+            }
+            else if (firstNumber == 4) {
+                suit = "червы";
+            }
+            else {
+                alert("Такой карты нет");
+                return;
+            }
+
+            if (secondNumber == 11) {
+                value = "валет";
+            }
+            else if (secondNumber == 12) {
+                value = "дама";
+            }
+            else if (secondNumber == 13) {
+                value = "король";
+            }
+            else if (secondNumber == 14) {
+                value = "туз";
+            }
+            else {
+                alert("Такой карты нет");
+                return;
+            }
+            alert(value + " " + suit);
+        }
+        function sum(n, a) {
+            let sum1 = 0;
+            for (let i = 1; i <= n; i++) {
+                sum1 += (i ** 2 + 2 * a) / i;
+            }
+            alert(sum1);
+        }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <h1>Часть 1</h1>
+        <label>Введите трехзначное число<input type="number" name="card_input" /></label>
+        <input type="submit" onclick="card(document.form1.card_input.value)" />
+    </form>
+    <form name="form2">
+        <h1>Часть 2</h1>
+        <label>Введите n<input type="number" name="n" /></label>
+        <label>Введите a<input type="number" name="a" /></label>
+        <input type="submit" onclick="sum(document.form2.n.value, document.form2.b.value)" />
+    </form>
+
+</body>
+</html>
